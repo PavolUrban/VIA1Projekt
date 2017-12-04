@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <!-- Meta
+    ======================================================================== -->
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+
+  <!-- Latest compiled JavaScript -->
+  <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <!-- Title
+    ======================================================================== -->
+  <title>Projekt 1</title>
+
+  <!-- CSS Styles
+    ======================================================================== -->
+  <link rel="stylesheet" href="css/style.css" media="screen" />
+  <script src="mainZaloha.js"></script>
+
+</head>
+
+<body onload="fillDropDown()">
+  <!--onload="fillDropDown()"-->
+  <div id="bodyWrapper">
+    <div class="container">
+      <h1>Menový prevod</h1>
+      <h2>Vyskúšajte náš nástroj na prevod vami zvolených peňažných mien.</h2>
+      <div id="nav">
+        <div class="form-group paddingDown">
+          <select class="form-control" id="sel1">
+            </select>
+        </div>
+        <div class="form-group paddingDown">
+          <select class="form-control" id="sel2">
+            </select>
+        </div>
+      </div>
+
+      <div id="nav">
+        <div class="oneHalf">
+          Zadajte počet:<br>
+          <input type="text" name="username"><br>
+        </div>
+        <div class="oneHalf">
+          Výsledok:<br>
+          <input type="password" name="psw" disabled>
+        </div>
+      </div>
+
+
+      <div class="buttonContent">
+
+          <button id="btn2" onclick="dateF()">datum</button>
+          <button id="btn1" onclick="getOANDA()">OANDA</button>
+          <button id="btn" onclick="myf()">Posledných 5 dní</button>
+          <button id="btn4" onclick="myf()">Posledných 10 dní</button>
+      </div>
+
+        <div class="graphContent">
+          <canvas id="myChart"></canvas>
+        </div>
+    </div>
+
+
+
+
+
+
+
+  </div>
+</body>
+</html>
