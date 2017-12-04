@@ -13,8 +13,6 @@ function myf(data){
   arrayRates.reverse();
   arrayDates.reverse();
   var myChart = document.getElementById('myChart').getContext('2d');
-      var sobota="sobota";
-      var kurz=25.01;
       var massPopChart = new Chart(myChart,{
         type:'line', //bar, horizontalBar, pie,line, doughnut, radar
         data:{
@@ -27,7 +25,7 @@ function myf(data){
         options:{
           title:{
             display:true,
-            text:'Hodnoty kurzu',
+            text:'Vývoj kurzu',
             fontSize:25
           },
           legend:{
@@ -179,9 +177,9 @@ function readDropdown2(){
 
 
 //----OANDA API
-function getOANDA() {
-var dates= dateF();
-  for (var i = 0; i < 7; i++) {
+function getOANDA(numberOfDays) {
+var dates= dateF(numberOfDays);
+  for (var i = 0; i < numberOfDays; i++) {
     var part1="https://www.oanda.com/rates/api/v1/rates/";
     var findBaseCurrency = readDropdown1();
     var baseCurrency=""+findBaseCurrency;
@@ -211,8 +209,7 @@ var dates= dateF();
 
   }
 
-  alert("Data ziskane mozete vytvorit graf.");
-
+  myf();
 }
 
 
@@ -245,6 +242,7 @@ function renderHTMLoanda(data) {
 
 
 
+
 function formatDate(date){
 
    var dd = date.getDate();
@@ -257,9 +255,9 @@ function formatDate(date){
 }
 
 
-function dateF () {
+function dateF (numberOfDays) {
     var result = [];
-    for (var i=0; i<7; i++) {
+    for (var i=0; i<numberOfDays; i++) {
         var d = new Date();
         d.setDate(d.getDate() - i);
         result.push(formatDate(d));
