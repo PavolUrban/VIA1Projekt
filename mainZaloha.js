@@ -7,6 +7,7 @@ var arrayRates=[];
 
 function myf(data){
 
+
   var myChart = document.getElementById('myChart').getContext('2d');
       var sobota="sobota";
       var kurz=25.01;
@@ -15,14 +16,14 @@ function myf(data){
         data:{
           labels:arrayDates,
           datasets:[{
-            label:'Population',
+            label:'Kurz',
             data:arrayRates
           }]
         },
         options:{
           title:{
             display:true,
-            text:'Largerst Cities in Massachusetts',
+            text:'Hodnoty kurzu',
             fontSize:25
           },
           legend:{
