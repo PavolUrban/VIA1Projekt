@@ -1,6 +1,9 @@
 var dataDiv = document.getElementById('dataDiv');
 var arrayDates=[];
 var arrayRates=[];
+var substrings = ['AUD','BGN','BRL','CAD','CHF','CNY','CZK','DKK','EUR','GBP','HKD','HRK','HUF','IDR','ILS','INR','JPY','KRW','LTL','MXN','MYR','NOK','NZD','PHP',
+                  'PLN','RON','RUB','SEK','SGD','THB','TRY','USD','ZAR'];
+   //podporovane meny
 
 
 
@@ -131,12 +134,13 @@ function renderHTMLDropDown(data){
 
   for (var i = 0; i < splitMyQuotes.length; i++) {
     var deleteQuotes = splitMyQuotes[i].replace(/['"]+/g, ''); //zmazanie uvodzoviek
-    if (deleteQuotes.indexOf("CZK") >= 0 || deleteQuotes.indexOf("EUR") >= 0 || deleteQuotes.indexOf("USD") >= 0)
-    {
-      valuesOfQuotes.push(deleteQuotes); //odfiltrovanie nepodporovanych mien
+
+    length = substrings.length;
+    while(length--) {
+      if (deleteQuotes.indexOf(substrings[length])!=-1) {
+        valuesOfQuotes.push(deleteQuotes); //odfiltrovanie nepodporovanych mien
+      }
     }
-
-
   }
 
 
@@ -181,7 +185,7 @@ var dates= dateF();
     var part1="https://www.oanda.com/rates/api/v1/rates/";
     var findBaseCurrency = readDropdown1();
     var baseCurrency=""+findBaseCurrency;
-    var part2=".json?api_key=GWy1Qa8T0e69jMpulrrAzWoM&decimal_places=3&date=";
+    var part2=".json?api_key=GWy1Qa8T0e69jMpulrrAzWoM&decimal_places=all&date=";
     var date = dates[i];
     console.log("Toto prislo z today .. je to den c."+i+" a datum"+date);
     var part3="&data_set=ecb&fields=averages&fields=highs&quote=";
@@ -204,9 +208,10 @@ var dates= dateF();
       renderHTMLoanda(data);
     });
 */
+
   }
 
-
+  alert("Data ziskane mozete vytvorit graf.");
 
 }
 

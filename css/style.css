@@ -58,14 +58,14 @@ h1, h2 {
 
   background: #fff;
   width: 80%;
-  height: 90px;
+  height: 70px;
   border-bottom: 1px solid #ececec;
 }
 
 .graphContent{
   background: #fff;
   width: 80%;
-  height: 400px;
+  height:100vh;
 }
 
 #nav {
@@ -79,10 +79,10 @@ h1, h2 {
 
 #btn,#btn1,#btn2,#btn4 {
   color: #fff;
-  background-color: #1d8547;
-  border-color: #1d8547;
-  height: 50px;
+  background-color: #43A047;
+  height: 30px;
   margin-top: 20px;
+  border:none;
 }
 
 .paddingDown {
