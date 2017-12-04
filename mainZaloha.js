@@ -7,7 +7,8 @@ var arrayRates=[];
 
 function myf(data){
 
-
+  arrayRates.reverse();
+  arrayDates.reverse();
   var myChart = document.getElementById('myChart').getContext('2d');
       var sobota="sobota";
       var kurz=25.01;
@@ -190,9 +191,19 @@ var dates= dateF();
     var final = part1+baseCurrency+part2+date+part3+currency;
 
 
+
+    $.get({
+      url: final,// mandatory
+      success:function(data, status) {
+        renderHTMLoanda(data);
+      },
+      async:false // to make it synchronous
+    });
+/*
     $.get(final, function(data, status) {
       renderHTMLoanda(data);
     });
+*/
   }
 
 
